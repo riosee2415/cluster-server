@@ -10,6 +10,12 @@ app.set(`PORT`, process.env.PORT);
 app.use(morgan(`dev`));
 app.use(helmet());
 
+app.get("/", (req, res) => {
+  console.log("TEST CALLED!");
+
+  res.json({ Hello: `World` });
+});
+
 app.listen(app.get(`PORT`), () => {
   console.log(`🍀 ${app.get(`PORT`)} CLUSTER TEST SERVER START`);
 });

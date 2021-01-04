@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: `CLUSTER_TEST`,
-      script: `babel-node ./app.js`,
+      script: `pm2 start npm -- run start`,
       instances: 0,
       exec_mode: `cluster`,
       watch: true,

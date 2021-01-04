@@ -11,11 +11,19 @@ app.use(morgan(`dev`));
 app.use(helmet());
 
 app.get("/", (req, res) => {
-  console.log("TEST CALLED!");
+    console.log("TEST CALLED!");
 
-  res.json({ Hello: `World` });
+    res.json({ Hello: `World` });
 });
 
+app.get("/error", (req, res) => {
+
+    console.log("ERROR");
+    throw Error("ERORR!");
+
+
+})
+
 app.listen(app.get(`PORT`), () => {
-  console.log(`🍀 ${app.get(`PORT`)} CLUSTER TEST SERVER START`);
+    console.log(`🍀 ${app.get(`PORT`)} CLUSTER TEST SERVER START`);
 });
